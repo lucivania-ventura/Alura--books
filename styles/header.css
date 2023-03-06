@@ -1,0 +1,127 @@
+.cabecalho__menu__hamburguer {
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/Menu.svg");
+  background-repeat: no-repeat; /* para não repetir*/
+  background-position: center; /*posicionar ao centro*/
+  display: inline-block;
+}
+
+.cabecalho {
+  background-color: var(--branco);
+  display: flex;
+  justify-content: space-between; /* separa para cada canto*/
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container__img {
+  padding: 1em;
+}
+
+.lista__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 60vw;
+}
+
+.container__botao:checked ~ .lista__menu {
+  display: block;
+}
+
+.lista__menu__titulo,
+.lista__menu__item {
+  padding: 1em;
+  background-color: var(--branco);
+}
+
+.lista__menu__titulo {
+  color: var(--laranja);
+  font-weight: 700;
+}
+
+.lista__menu__link {
+  background: var(--azul-degrade);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+}
+
+.container__botao,
+.container__titulo,
+.opcoes,
+.container__texto {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .container__titulo,
+  .container__titulo__negrito {
+    font-family: var(--fonte-secundaria);
+    font-size: 30px;
+  }
+  .container__titulo {
+    font-weight: 400;
+    display: block;
+  }
+  .container__titulo__negrito {
+    font-weight: 700;
+  }
+  .opcoes {
+    display: flex;
+  }
+  .opcoes__item {
+    padding: 0 1em;
+    text-transform: uppercase;
+  }
+
+  .opcoes__link {
+    text-decoration: none;
+    color: var(--preto);
+  }
+  .container__img-coração,
+  .cabecalho__menu__hamburguer,
+  .opcoes__botao {
+    display: none;
+  }
+  .opcoes__botao:checked ~ .lista__menu {
+    display: block;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1728px) {
+  .container__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--preto);
+  }
+  .cabecalho {
+    padding: 2.2em;
+  }
+  .opcoes {
+    margin-right: auto;
+  }
+  .container__texto {
+    display: block;
+    font-size: 35px;
+    font-weight: 500;
+  }
+  .container__titulo,
+  .container__titulo__negrito {
+    font-size: 48px;
+  }
+  .opcoes__item,
+  .lista__menu__link {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
